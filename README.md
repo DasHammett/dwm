@@ -1,4 +1,4 @@
-# dwm
+# dwm6-3
 Yet another DWM repo. This repo is just another fork of dwm with some patches.
 
 This repo though does not have the patches already applied, but has the vanilla code and you apply the patches. This allows to include further patches by adding them to the patch folder. 
@@ -34,3 +34,5 @@ The bar is [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) fr
 ## Wait, no screenshot?
 Nop, not really... This is not a ricing dwm. Although you will find here the scripts I use for `dwmblocks-async`, the intention is to have a backup in case I screw-up somewhere down the line and I need a clean slate :)
 
+## I am trying your dwmblocks scripts but some are not working
+Some of the scripts point to other scripts I have in my system, mainly the `yad` windows for the weather and date scripts. The weather scripts themselves are in turn python scripts I wrote time ago. I will not post those. Should you really want them, let me know and I will see how I can share them with you.

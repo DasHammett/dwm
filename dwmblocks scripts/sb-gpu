@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+case $BLOCK_BUTTON in
+   2) st -e vim "$0" ;;
+esac
+
+echo " " $(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{print $1}')"%"
+

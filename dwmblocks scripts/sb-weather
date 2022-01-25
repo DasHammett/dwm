@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+   1) /home/hammett/.config/polybar/weather_full.sh ;;
+   2) st -e vim "$0" ;;
+   3) /home/hammett/.config/polybar/weather_forecast.sh ;;
+esac
+
+echo  $(/home/hammett/.config/polybar/weather.py Barcelona)

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+   2) st -e vim "$0" ;;
+esac
+
+used=$(free -h | awk '/^Mem/ { print $3}' | sed s/i//g)
+total=$(free -m | awk '/^Mem/ { print $2}' | sed s/i//g)
+total_calculated=$(printf "%0.0f" "$(bc <<< "scale = 2; $total / 1024")")"G"
+used_calculated=$(printf "%0.0f" "$(bc <<< "scale = 2; $used / 1024")")"G"
+echo  $used"/"$total_calculated
+

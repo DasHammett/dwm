@@ -1,0 +1,15 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+   1) /home/hammett/.config/polybar/cal.sh ;;
+   2) st -e vim "$0" ;;
+esac
+
+bg=""
+fg=""
+bgicon=""
+reset="^d^"
+
+date=$(date "+%d/%b %R")
+
+echo $bgicon$fg $bg$date$reset

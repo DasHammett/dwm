@@ -1,0 +1,7 @@
+#!/bin/bash
+case $1 in
+up) amixer set Master 2+ ;;
+down) amixer set Master 2- ;;
+esac
+kill -44 $(pidof dwmblocks)
+

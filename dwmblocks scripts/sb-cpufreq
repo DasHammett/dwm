@@ -1,0 +1,15 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+   1) setsid -f st -e htop ;;
+   2) st -e vim "$0" ;;
+esac
+
+fg=""
+bg=""
+reset="^d^"
+
+freq=$(cat /proc/cpuinfo | grep MHz | head -n 1 | awk -F ' ' '{print $4}')
+freq=$(echo "scale=2; $freq / 1000" | bc -l)
+#echo  "^b#AAD7EF^""^c#111517^" $freq GHz"^d^"
+echo  $bg$fg $freq GHz$reset

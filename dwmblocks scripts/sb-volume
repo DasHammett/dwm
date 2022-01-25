@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+case $BLOCK_BUTTON in
+   2) st -e vim "$0" ;;
+esac
+
+echo 墳 $(amixer sget Master | grep Mono: | awk '{ gsub(/\[/, ""); gsub(/%\]/, ""); printf "%s ", $4 }')

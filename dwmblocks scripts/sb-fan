@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+case $BLOCK_BUTTON in
+   2) st -e vim "$0" ;;
+esac
+
+speed=$(sensors | grep Front\ Fan | awk -F ' ' '{print $3}')
+    echo  $speed

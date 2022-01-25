@@ -1,0 +1,27 @@
+#!/bin/bash 
+
+case $BLOCK_BUTTON in
+   2) st -e vim "$0" ;;
+esac
+
+fg=""
+bg=""
+reset="^d^"
+icon=" "
+target_high=69
+target_med=59
+
+temp=$(sensors | awk '/Tccd1/ {gsub("+","",$2);print $0+$2}')
+
+if [[ $temp > $target_med ]]
+then
+   bg="^b#E69138^"
+   fg="^c#111517^"
+elif [[ $temp > $target_high ]]
+then
+   bg="^b#B35151^"
+   fg="^c#111517^"
+fi
+
+echo $fg$bg$icon$temp"ºC"$reset
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+song=$(ncmpcpp --current-song "{%a -} %t" 2>/dev/null)
+time=$(mpc | grep playing | awk '{print "["$3"]"}')
+echo  $song $time
+
+case $BLOCK_BUTTON in
+   1) mpc prev 1>/devNull ;;
+   2) mpc toggle 1>/dev/null ;;
+   3) mpc next 1>/dev/null ;;
+esac
+

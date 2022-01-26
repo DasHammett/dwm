@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+   2) st -e vim "$0" ;;
+esac
+
+used=$(free -b | awk '/^Mem/ { print $3}' | numfmt --to=iec --round=nearest)
+total=$(free -b | awk '/^Mem/ { print $2}' | numfmt --to=iec --round=nearest)
+echo  $used"/"$total
+

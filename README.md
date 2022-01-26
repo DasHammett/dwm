@@ -19,7 +19,7 @@ Instructions for dummies:
 ```
 git clone https://github.com/DasHammett/dwm.git
 cd dwm
-for in patches/*.diff; do patch --ignore-whitespace < $i; done
+for i in patches/*.diff; do patch --ignore-whitespace < $i; done
 make
 sudo make install
 ```

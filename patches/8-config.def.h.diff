@@ -1,5 +1,5 @@
---- config.def.h	2022-01-26 09:51:03.984541543 +0100
-+++ config.def.h	2022-01-21 14:15:50.902250091 +0100
+--- config.def.h.orig	2022-01-26 09:51:03.981541543 +0100
++++ config.def.h	2022-01-26 11:13:29.228152260 +0100
 @@ -4,14 +4,14 @@
  static const unsigned int borderpx  = 1;        /* border pixel of windows */
  static const unsigned int snap      = 32;       /* snap pixel */
@@ -29,7 +29,12 @@
  
  static const Rule rules[] = {
  	/* xprop(1):
-@@ -40,9 +40,9 @@
+@@ -36,13 +36,14 @@
+ 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+ 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+ 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
++	{ "Yad",     NULL,     NULL,           0,         1,          1,           0,        -1 },
+ 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
  };
  
  /* layout(s) */
@@ -41,7 +46,7 @@
  static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
  
  #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
-@@ -68,7 +68,7 @@
+@@ -68,7 +69,7 @@
  };
  
  /* key definitions */
@@ -50,8 +55,12 @@
  #define TAGKEYS(KEY,TAG) \
  	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
  	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-@@ -82,63 +82,84 @@
+@@ -78,65 +79,88 @@
+ /* helper for spawning shell commands in the pre dwm-5.0 fashion */
+ #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
  
++#define STATUSBAR "dwmblocks"
++
  /* commands */
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 -static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
@@ -188,3 +197,14 @@
  };
  
  /* button definitions */
+@@ -146,7 +170,9 @@
+ 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+ 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+ 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
++	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
++	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
++	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
+ 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+ 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+ 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

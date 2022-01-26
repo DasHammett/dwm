@@ -1,4 +1,4 @@
---- ../config.def.h	2022-01-26 09:51:03.984541543 +0100
+--- config.def.h	2022-01-26 09:51:03.984541543 +0100
 +++ config.def.h	2022-01-21 14:15:50.902250091 +0100
 @@ -4,14 +4,14 @@
  static const unsigned int borderpx  = 1;        /* border pixel of windows */

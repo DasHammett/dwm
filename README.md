@@ -25,14 +25,14 @@ sudo make install
 ```
 Please note the `--ignore-whitespace` from the patch command. Without it, several patches will fail to apply. I am too lazy to correct tabs for spaces and such, sorry :)
 
-Also please have a look at `patches/8-config.def.h` and make the necessary adjustments there. This is my personal preference and there are some custom scripts you problably will not have.
+Also please have a look at `patches/8-config.def.h.diff` and make the necessary adjustments there. This is my personal preference and there are some custom scripts you problably will not have.
 Should you forget to make the changes before applying the patches and compiling dwm, then remove `config.h`, edit `config.def.h` to your liking and compile again with `make` and `sudo make install`
 
-## What is that cool bar you have there?
-The bar is [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) from the awesome UtkarshVerma. Please make sure you follow the instructions to the letter if you want to have the clickable blocks.
+## What bar do you use?
+The bar is [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) from the awesome UtkarshVerma. Please make sure you follow the instructions to the letter if you want to have the clickable blocks. I have included a patch for `dwm.c`, so should be enough to configure the bar and compile it.
 
 ## Wait, no screenshot?
-Nop, not really... This is not a ricing dwm. Although you will find here the scripts I use for `dwmblocks-async`, the intention is to have a backup in case I screw-up somewhere down the line and I need a clean slate :)
+Nope, not really... This is not a ricing dwm. Although you will find here the scripts I use for `dwmblocks-async`, the intention is to have a backup in case I screw-up somewhere down the line and I need a clean slate :)
 
 ## I am trying your dwmblocks scripts but some are not working
 Some of the scripts point to other scripts I have in my system, mainly the `yad` windows for the weather and date scripts. The weather scripts themselves are in turn python scripts I wrote time ago. I will not post those. Should you really want them, let me know and I will see how I can share them with you.

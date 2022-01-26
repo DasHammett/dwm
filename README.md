@@ -10,7 +10,7 @@ This repo though does not have the patches already applied, but has the vanilla 
 * [swallow](https://dwm.suckless.org/patches/swallow/)
 * [status2d](https://dwm.suckless.org/patches/status2d/)
 * [statusallmons](https://dwm.suckless.org/patches/statusallmons/)
-* [statuscmd-status2s](https://dwm.suckless.org/patches/statuscmd/)
+* [statuscmd-status2d](https://dwm.suckless.org/patches/statuscmd/)
 
 Needles to say, my job has been fixing the patch conflicts and determining the right order to apply them. I have not developed any of those patches, kudos goes to their creators.
 

@@ -1,0 +1,11 @@
+--- dwm.c	2022-01-26 09:53:29.242530109 +0100
++++ dwm.c	2022-01-26 09:54:04.337527346 +0100
+@@ -1129,7 +1129,7 @@
+ 				return statuspid;
+ 		}
+ 	}
+-	if (!(fp = popen("pidof -s "STATUSBAR, "r")))
++	if (!(fp = popen("pgrep -o "STATUSBAR, "r")))
+ 		return -1;
+ 	fgets(buf, sizeof(buf), fp);
+ 	pclose(fp);

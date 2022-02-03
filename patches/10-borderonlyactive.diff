@@ -1,0 +1,27 @@
+--- dwm.c.orig	2022-02-03 10:05:48.572350216 +0100
++++ dwm.c	2022-02-03 10:08:49.588358847 +0100
+@@ -1030,6 +1030,7 @@
+ 	if (selmon->sel && selmon->sel != c)
+ 		unfocus(selmon->sel, 0);
+ 	if (c) {
++        c->bw = borderpx;
+ 		if (c->mon != selmon)
+ 			selmon = c->mon;
+ 		if (c->isurgent)
+@@ -1039,6 +1040,7 @@
+ 		grabbuttons(c, 1);
+ 		XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
+ 		setfocus(c);
++        arrange(c->mon);
+ 	} else {
+ 		XSetInputFocus(dpy, root, RevertToPointerRoot, CurrentTime);
+ 		XDeleteProperty(dpy, root, netatom[NetActiveWindow]);
+@@ -2118,6 +2120,8 @@
+ 		XSetInputFocus(dpy, root, RevertToPointerRoot, CurrentTime);
+ 		XDeleteProperty(dpy, root, netatom[NetActiveWindow]);
+ 	}
++    c->bw = 0;
++    arrange(c->mon);
+ }
+ 
+ void
